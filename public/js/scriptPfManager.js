@@ -36,25 +36,15 @@ function getPfList( usrn ){
 function getTickersList(){
 	server.emit( "getTickersList", (result) => {
 		tickersList = result["data"];
-		let tickersType = Object.keys( tickersList );
-		for( var i = 0; i < tickersType.length; i++ )
-			tickersDict[tickersType[i]] = Object.assign({}, ...tickersList[tickersType[i]].map((x) => ({[x.s]: [x.n,x.p]})));
-		tempTickersDict = $.extend(true, {}, tickersDict);
+		console.log( tickersList );
 	});
 }
 
 //Show dropdown menu with the tickers list from the server
 function showTickersInInput(){
 	selectedType = $("#tickerTypeInput").val();
-	if( selectedType == "stocks" ){
-		let selectedExchange = $("#tickerExchangeInput").val();
-		var tickersType = selectedExchange;
-		$("#tickerExchangeInput").selectpicker("show");
-	}
-	else{
-		$("#tickerExchangeInput").selectpicker("hide");
-		var tickersType = selectedType;
-	}
+	var tickersType = selectedType;
+	
 	$("#addPfTickersInput").find("option").remove();
 	$("#addPfTickersInput").find("li").remove();
 	$("#addPfTickersInput").selectpicker("refresh");

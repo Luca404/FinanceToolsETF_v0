@@ -92,7 +92,7 @@
             <!-- Add portfolio Modal -->
             <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content" style="width: 800px;">
                         <div class="modal-header">
                             <h5 class="modal-title" id="addModalLabel">Add Portfolio</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -104,36 +104,49 @@
                             <input id="addPfNameInput" class="inputCheck" autocomplete="one-time-code" />
                             <br />
                             <br />
-                            <h5>Tickers:</h5>
+                            <br />
+                            <h5>Filters</h5>
+                            <br />
                             <span id="portfolioTickers" style="display:inline-block; vertical-align:top;">
                                 <span class="mb-3" style="display:inline-block; color:black;">
                                     <div>
                                         <div class="color-1">
-                                            <select data-placeholder="Select Asset Type" class="selectpicker" id="tickerTypeInput" tabindex="1" onchange="showTickersInInput();" >
-                                                <option value="stocks" selected="selected">Stocks</option>
-                                                <option value="etf">ETF</option>
-                                                <option value="commodities">Commodities</option>
-                                                <option value="cryptocurrencies">Cryptocurrencies</option>
+                                            <select data-placeholder="Benchmark Type" title="Benchmark Type" class="selectpicker" id="tickerTypeInput" tabindex="1" onchange="showTickersInInput();" >
+                                                <option value="equity">Equity</option>
+                                                <option value="equityShort">Equity Short</option>
+                                                <option value="CorpBond">Corporate Bond</option>
+                                                <option value="GovBond">Government Bond</option>
+                                                <option value="BondShort">Bond Short</option>
+                                                <option value="GovBond">Commodities</option>
                                             </select>
-                                        </div>                                                        
-                                    </div>
-                                </span>
-                                <span class="mb-3" style="display:inline-block; color:black;">
-                                    <div>
-                                        <div class="color-1">
-                                            <select data-placeholder="Select Country" class="selectpicker" id="tickerExchangeInput" tabindex="1" onchange="showTickersInInput();" >
-                                            <optgroup label="Nord America">
-                                                <option value="nyse">NYSE</option>
-                                                <option value="nasdaq">NASDAQ</option>
-                                            <optgroup label="Europe">
-                                                <option value="ftse">FTSE</option>
-                                            <optgroup label="Asia">
-                                                <option value="csi">CSI</option>
+                                            <select data-placeholder="Area" title="Area" class="selectpicker" id="tickerTypeInput" tabindex="1" onchange="showTickersInInput();" >
+                                                <option value="europe">Europe</option>
+                                                <option value="northAmerica">North America</option>
+                                                <option value="asia">Asia</option>
+                                                <option value="emerging">Emerging</option>
                                             </select>
-                                        </div>                                                        
+                                            <select data-placeholder="Distribution policy" title="Distribution policy" class="selectpicker" id="tickerTypeInput" tabindex="1" onchange="showTickersInInput();" >
+                                                <option value="accumulating">Accumulating</option>
+                                                <option value="distributing">Distributing</option>
+                                            </select>
+                                            <select data-placeholder="Trading Currency" title="Trading Currency" class="selectpicker" id="tickerTypeInput" tabindex="1" onchange="showTickersInInput();" >
+                                                <option value="eur">EUR</option>
+                                                <option value="usd">USD</option>
+                                                <option value="chf">CHF</option>
+                                            </select>
+                                            <select data-placeholder="TER" title="TER" class="selectpicker" id="tickerTypeInput" tabindex="1" onchange="showTickersInInput();" >
+                                                <option value="less0.2">Lower than 0.2%</option>
+                                                <option value="less0.5">Lower than 0.5%</option>
+                                                <option value="less1">Lower than 1%</option>
+                                                <option value="less1.5">Lower than 1.5%</option>
+                                            </select>
+                                        </div>
+                                                                                           
                                     </div>
                                 </span>
                             </span>
+                            <br />
+                            <br />
                             <br />
                             <div class="col-md-6" id="addPfTickersDiv">
                                 <select id="addPfTickersInput" placeholder="Select Symbols" multiple class="selectpicker" onchange="changeInputNumShares();" autocomplete="one-time-code" data-live-search="true" title="Select Ticker" data-display="static">                                       
@@ -141,7 +154,7 @@
                             </div>
                             <br />
                             <br />
-                            <h5>Selected Tickers:</h5>
+                            <h5>Selected ETFs:</h5>
                             <br />
                             <div>
                                 <table id="sharesNumTable" class="table table-borderless">    

@@ -26,6 +26,7 @@ app = socketio.ASGIApp(server, static_files={
 })
 
 
+#Server's events
 @server.event
 async def connect(sid, env):
     print(sid, "connected")
@@ -72,14 +73,9 @@ async def getQuestions(sid):
 
 @server.event
 async def getTickersList(sid):
-    files = os.listdir("./json/tickersList/tickers/")
-    tickersList = {}
-    for file in files:
-        fileName = file.split( ".json" )[0]
-        with open( "./json/tickersList/tickers/" + file ) as f:
-            jsonData = json.load(f)
-        tickersList[fileName] = jsonData["data"]
-    return {"data": tickersList}
+    with open( "./json/tickersList/etfList.json" ) as f:
+        jsonData = json.load(f)
+    return {"data": jsonData}
 
 @server.event
 async def getPfList(sid, data):

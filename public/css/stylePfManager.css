@@ -437,6 +437,7 @@ background: transparent;
 
 #addPfTickersDiv{
     position: relative;
+    display: inline-block;
     max-width: 500px;
     width: 100%;
 }
