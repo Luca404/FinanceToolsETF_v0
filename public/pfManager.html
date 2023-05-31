@@ -77,9 +77,11 @@
                     <tbody id="tbody1">
                         <tr >
                             <td colspan="5" id="addTd">
-                                <div id="addPfDiv" data-toggle="modal" data-target="#addModal" onclick="addPf()" >
-                                    <span class="hoverText" data-hover="Click to add a Portfolio" >Add</span>
-                                </div>
+                                <a href="/createPf">
+                                    <div id="addPfDiv" data-toggle="modal" data-target="#addModal" onclick="addPf()" >
+                                        <span class="hoverText" data-hover="Click to add a Portfolio">Add</span>
+                                    </div>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
@@ -149,8 +151,20 @@
                             <br />
                             <br />
                             <div class="col-md-6" id="addPfTickersDiv">
-                                <select id="addPfTickersInput" placeholder="Select Symbols" multiple class="selectpicker" onchange="changeInputNumShares();" autocomplete="one-time-code" data-live-search="true" title="Select Ticker" data-display="static">                                       
-                                </select>
+                                <table class="table table-striped" >
+                                    <thead">
+                                      <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Symbol</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Area</th>
+                                        <th scope="col">TER</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="etfListBody">
+
+                                    </tbody>
+                                </table>
                             </div>
                             <br />
                             <br />

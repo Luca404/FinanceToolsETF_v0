@@ -1,0 +1,9 @@
+#bodyContent{
+    margin-left: 300px;
+    justify-content: center;
+}
+#createPfContent{
+    display: inline-block;
+    text-align: center;
+    margin-left: 180px;
+}
